@@ -90,7 +90,7 @@ export function Benchmarks({ token, role }: { token: string; role: string }) {
     <section>
       <h1 className="text-3xl font-semibold">Benchmarks</h1>
       <p className="mt-2 text-slate-300">
-        Presets use short hash jobs so a laptop can finish them. The same runner accepts a custom workload of up to 100 jobs.
+        Presets use short hash jobs so a laptop can finish them. The same runner accepts a custom workload of up to 1200 jobs.
       </p>
       <div className="mt-6 flex flex-wrap items-end gap-3">
         <label className="text-sm text-slate-300">

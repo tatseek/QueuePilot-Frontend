@@ -1,13 +1,11 @@
 # Dashboard
 
-The foundation screen shows whether the API can reach PostgreSQL and Redis. It reads `GET /health` through the Vite dev proxy.
+The app has five screens. They poll the API about every 2.5 seconds.
 
-Later screens, in order:
+1. Overview reads `/api/metrics/summary` and `/api/metrics/tenants`.
+2. Jobs submits `sleep`, `hash_compute`, or `report_generate`, filters the list, and cancels.
+3. Workers shows heartbeat, state, current job, and utilization. Admin only.
+4. Scheduler changes the policy, tenant weight, and in-flight limit, and lists scaling events. Admin only.
+5. Benchmarks starts a preset run, charts mean wait and a comparison of finished runs, and exports the JSON. Admin only.
 
-1. Overview: queued, running, and completed jobs, worker count, latency, and throughput.
-2. Jobs: submit a task, filter the list, and cancel work.
-3. Workers: heartbeat, current job, and utilization.
-4. Scheduler: policy, tenant weights, and concurrency limits.
-5. Benchmarks: workload setup and comparison charts.
-
-The first version polls every few seconds. WebSockets are optional. Charts use Recharts when the benchmark screen exists. Tailwind is already installed. Shared UI components are added with the screens, not before a screen needs them.
+Charts use Recharts. Tailwind styles the layout. Log in with a demo account. The password is `queuepilot`.
